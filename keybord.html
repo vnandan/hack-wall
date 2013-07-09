@@ -1,0 +1,22 @@
+<html>
+<head>
+     <script language="Javascript" src="../gamelib/gamelib_core.js"></script>
+     <script language="Javascript" src="../gamelib/gamelib_interface.js"></script>
+     <script language="Javascript" src="../gamelib/gamelib_keyboard.js"></script>
+     <script language="Javascript" src="../gamelib/gamelib_mouse.js"></script>
+     <script language="Javascript" src="../gamelib/gamelib_sprites.js"></script>
+     
+     <script language="Javascript">
+     function init(){
+          Kb_trapkey("S");
+          rightKey1=Kb_trapkey("UP");
+            alert(rightKey1.setEvent("func()"));
+     }
+     
+     function func(){document.getElementById("div").innerText="vipul";}
+     
+     </script>
+</head>
+<body onload="init()">
+     <div id="div">text</div>
+</html>

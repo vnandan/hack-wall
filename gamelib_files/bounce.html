@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Bounce Bounce!!</title>
+        <script language="Javascript" src="../gamelib/gamelib_sprites.js"></script>
+        <script language="Javascript" src="../gamelib/gamelib_core.js"></script>
+        <script language="Javascript" src="../gamelib/gamelib_keyboard.js"></script>
+        
+    <script>
+        var ball;
+        function right_func()
+        {
+            var x=ball.x;
+            x+=15;
+            var y=ball.y;
+            ball.moveTo(x,y);
+            
+        }
+        function left_func()
+        {
+          
+            var x=ball.x;
+            var y=ball.y;
+            x-=15;
+            ball.moveTo(x,y);
+          
+        }
+        function up_func()
+        {
+          
+            var x=ball.x;
+            var y=ball.y;
+            y-=15;
+            ball.moveTo(x,y);
+          
+        }
+        function down_func()
+        {
+          /*
+            var x=ball.x;
+            var y=ball.y;
+            y+=15;
+            ball.moveTo(x,y);
+        */
+        }
+        function init(){
+        
+            ball=new Sp_Sprite();
+            ball.setImage("../gamelib/gamelib_images/face0.gif",150,86,1,1);
+            ball.setFrame(0);
+            var y=Gl_get_window_height();
+            var x=Gl_get_window_width();
+           ball.setXlimits(0,x);
+            ball.setYlimits(0,y);
+            ball.moveTo(220,220);
+            rightKey=Kb_trapkey("RIGHT");
+            rightKey.setEvent("right_func()");
+            leftKey=Kb_trapkey("LEFT");
+            leftKey.setEvent("left_func()");
+            rightKey=Kb_trapkey("UP");
+            rightKey.setEvent("up_func()");
+            leftKey=Kb_trapkey("DOWN");
+            leftKey.setEvent("down_func()"); 
+        }
+        
+        
+    </script>
+    </head>
+    <body onload="init()">
+        
+    </body>
+</html>
