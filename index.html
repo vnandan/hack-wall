@@ -31,7 +31,7 @@
 		overflow: hidden;
 	    }
     </style>
-     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+     <script src="jquery.js"></script>
       <script language="Javascript" src="gamelib/gamelib_core.js"></script>
      <script language="Javascript" src="gamelib/gamelib_mouse.js"></script>
      <script language="Javascript" src="gamelib/gamelib_sprites.js"></script>
@@ -74,19 +74,20 @@
         for(var i=0;i<10;i++)
         {
         ball[i]=new Sp_Sprite();
-	ball[i].setImage("gamelib/gamelib_images/block.png",40,40,1,1);
+	ball[i].setImage("./img/"+i+".jpg",40,40,1,1);
         ball[i].setXlimits(0,widthx);
 	ball[i].setYlimits(0,heighty);
        ball[i].bounces=true;
-       ball[i].collides=true;
+       ball[i].collides=false;
         ball[i].setFrame(0);
 	ball[i].useHitEvents(true);
 		
-		for(j=0;j<i;j++)
-		{
-		ball[i].setHitEvent(ball[j],"bounce("+i+","+j+")");
-		}
+		//for(j=0;j<i;j++)
+		//{
+		//ball[i].setHitEvent(ball[j],"bounce("+i+","+j+")");
+		//}
 		ball[i].switchOn();
+		
         }
 	reset_balls();
 	
